@@ -1,6 +1,7 @@
 import { AppSidebar } from "./app-sidebar"
 import { SidebarInset, SidebarProvider } from "./ui/sidebar"
 import { ChartBarInteractive } from "@/components/chart-bar-interactive"
+import { DataTable } from "@/components/data-table"
 
 const Layout = ({children}: {children: React.ReactNode}) => {
   return (
@@ -10,6 +11,8 @@ const Layout = ({children}: {children: React.ReactNode}) => {
         <SidebarInset>
             <main>
                 <ChartBarInteractive/>
+                <DataTable data={[]}/>
+                {children}
             </main>
         </SidebarInset>
     </SidebarProvider>
