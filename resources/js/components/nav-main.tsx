@@ -1,4 +1,5 @@
-import { MailIcon, PlusCircleIcon, type LucideIcon } from "lucide-react"
+import { Link } from "@inertiajs/inertia-react"
+import { PlusCircleIcon, MailIcon, type LucideIcon } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -42,12 +43,14 @@ export function NavMain({
         </SidebarMenu>
         <SidebarMenu>
           {items.map((item) => (
-            <SidebarMenuItem key={item.title}>
-              <SidebarMenuButton tooltip={item.title}>
-                {item.icon && <item.icon />}
-                <span>{item.title}</span>
-              </SidebarMenuButton>
-            </SidebarMenuItem>
+            <Link key={item.title} href={item.url} className="block">
+              <SidebarMenuItem>
+                <SidebarMenuButton tooltip={item.title} className="w-full flex items-center gap-2">
+                  {item.icon && <item.icon />}
+                  <span>{item.title}</span>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            </Link>
           ))}
         </SidebarMenu>
       </SidebarGroupContent>

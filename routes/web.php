@@ -7,7 +7,7 @@ use Inertia\Inertia;
 // Route::get('/', fn() => inertia('Dashboard'));
 
 Route::get('/dashboard', fn() => inertia('Dashboard'));
-Route::get('/employee', fn() => inertia('Employee'));
+// Route::get('/employee', fn() => inertia('employee/Index'))->name('employee.index');
 
 
 // <?php
